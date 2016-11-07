@@ -1,0 +1,14 @@
+<h1>WorldGame#game</h1>
+<p>Find me in app/views/world_game/game.html.erb</p>
+
+<% 9.times do %>
+<%= ('A'..'Z  ').to_a[rand(26)]%>
+<% end %>
+
+
+<form action="/world_game/score" method="get">
+   <label for="question">Guess a word</label>
+   <input type="text" id="question" name="word" placeholder="Your word">
+   <input type="submit" value="GO!">
+   <input type="hidden" name="start_time" value="<%= @start_time%>">
+</form>
